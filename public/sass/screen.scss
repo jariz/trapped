@@ -1,0 +1,277 @@
+//@import "compass/reset";
+@import "yeti";
+@import "fa/font-awesome";
+@import "compass/css3/transition";
+
+@font-face {
+  font-family: 'bold';
+  src: url('../font/antonio-bold-webfont.eot');
+  src: url('../font/antonio-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/antonio-bold-webfont.woff') format('woff'),
+  url('../font/antonio-bold-webfont.ttf') format('truetype'),
+  url('../font/antonio-bold-webfont.svg#antoniobold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'regular';
+  src: url('../font/antonio-regular-webfont.eot');
+  src: url('../font/antonio-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/antonio-regular-webfont.woff') format('woff'),
+  url('../font/antonio-regular-webfont.ttf') format('truetype'),
+  url('../font/antonio-regular-webfont.svg#antonioregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'lillyregular';
+  src: url('../font/Lilly__-webfont.eot');
+  src: url('../font/Lilly__-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/Lilly__-webfont.woff') format('woff'),
+  url('../font/Lilly__-webfont.ttf') format('truetype'),
+  url('../font/Lilly__-webfont.svg#lillyregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+body {
+  padding-bottom: 0 !important; //phpdebugbar bypass lol
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  font-family: 'regular';
+}
+
+#content>.container {
+  padding-top:50px;
+  padding-bottom: 50px;
+}
+
+.player {
+  display:none;
+  &.visible {
+    display:block;
+    -webkit-animation-duration: 750ms;
+    animation-duration: 750ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: bounceInUp;
+    animation-name: bounceInUp;
+  }
+  .artwork {
+    width:45px;
+    margin-left:15px;
+  }
+  .title {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  .controls li a {
+    &.disable {
+      color: #ccc;
+      background-color: #2B2B2B;
+      &:hover {
+        @extend .disable;
+      }
+    }
+  }
+}
+
+.btn-ridiculous {
+  padding: 20px 35px;
+  font-size: 26px;
+  line-height: 1.33;
+}
+
+
+//pace plugin
+.pace .pace-progress {
+  background: #fff;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  height: 2px;
+
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -o-transition: width 1s;
+  transition: width 1s;
+}
+
+.pace-inactive {
+//  display: none;
+}
+
+//home grid
+.grid {
+  >.item {
+    position: relative;
+    height:250px;
+    background-position: center;
+    background-size: 100% auto;
+    >.info {
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: url(../img/grid-bg.png);
+      >h4 {
+        position: absolute;
+        bottom:10px;
+        left:10px;
+        font-family:'regular',arial, sans-serif;
+        color:#f5f5f5;
+      }
+      >.label {
+        font-size: 16px;
+      }
+      z-index: 0;
+    }
+    >.hover {
+      opacity:0;
+      @include transition(opacity 200ms);
+      text-align: center;
+      width:100%;
+      padding-top:88px;
+      color:#fff;
+      background:rgba(0,0,0,.5);
+      z-index: 1;
+      left:0;
+      top:0;
+      height:100%;
+      position: absolute;
+      cursor: pointer;
+    }
+    &:hover .hover {
+      opacity:1;
+    }
+  }
+}
+
+.hero {
+  margin-top:20px;
+  background-attachment: fixed;
+  background-position: 0 20px;
+  .container {
+    padding-top:30px;
+    padding-bottom:20px;
+    h1 {
+      text-align: center;
+      font-family: 'bold', arial, sans-serif;
+      font-size:86px;
+      color:#fff;
+      text-shadow: 1px 1px 3px #000000;
+      margin-bottom:0;
+    }
+    h4 {
+      font-family:'lillyregular', arial, sans-serif;
+      position: relative;
+      left:114px;
+      text-align: center;
+      text-shadow:1px 1px 2px #000000;
+      margin-top:0;
+      color:#fff;
+      top:-3px;
+    }
+    p {
+      a {
+        text-shadow: none;
+      }
+      color:#fff;
+      text-shadow: 1px 1px 1px #3c3c3c;
+    }
+    span {
+      font-style: italic;
+    }
+  }
+}
+
+#infscr-loading {
+  display:none !important;
+}
+
+.airtime {
+  h3 {
+    font-size:16px;
+    margin-top:0;
+    margin-bottom:10px;
+  }
+}
+
+@-webkit-keyframes bounceInUp {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInUp {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.media > .pull-left {
+
+}
