@@ -82,7 +82,7 @@
 </div>
 
 
-<script src="{{url('js/plugins/jqury/jquery.min.js')}}"></script>
+<script src="{{url('plugins/jquery/jquery.min.js')}}"></script>
 <script src="http://connect.soundcloud.com/sdk.js"></script>
 <script src="{{url('js/plugins.js')}}"></script>
 <script src="{{url('js/player.js')}}"></script>
