@@ -8,7 +8,7 @@
     </div>
 
     <div class="alert alert-warning">
-        <p><strong><i class="fa fa-music"></i> DJ's wanted!</strong> Are you an expert on trap? Do you have a music library with thousands of tracks? We need you! <a href="mailto:michael@trapped.io">E-mail us!</a> (no mixing skills necessary)</p>
+        <p><strong><i class="fa fa-music"></i> DJ's wanted!</strong> Are you an expert on trap? Do you have a music library with thousands of tracks? We need you! <a href="http://www.reddit.com/message/compose?to=%2Fr%2Ftrap">Message us on reddit!</a> (no mixing skills necessary)</p>
     </div>
 
     <p>
