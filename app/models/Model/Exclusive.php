@@ -39,10 +39,8 @@ class Exclusive extends \Eloquent {
                         $f = json_decode($curl->response);
                         if(isset($f->artwork_url)) {
                             $exclusive->art = $f->artwork_url;
-                            $exclusive->save();
                         } else if(isset($f->user->avatar_url)) {
                             $exclusive->art = $f->user->avatar_url;
-                            $exclusive->save();
                         }
                     }
                 }

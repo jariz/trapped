@@ -6,7 +6,7 @@
         <h1>About</h1>
     </div>
     <h4>What?</h4>
-    <p>Trapped is is a (soundcloud) link aggregator for the <a href="http://reddit.com/r/trap">trap subreddit</a><br>The goal of trapped is simple. <span style="font-style: italic">To find more music.</span></p>
+    <p>Trapped is is a (soundcloud) link aggregator for the <a target="_blank" href="http://reddit.com/r/trap">trap subreddit</a><br>The goal of trapped is simple. <span style="font-style: italic">To find more music.</span></p>
 
     <h4>Why?</h4>
     <p>
