@@ -31,7 +31,7 @@ class Thread extends \Eloquent {
 
         $start = time(true);
         $curl = new Curl();
-        $curl->get("http://www.reddit.com/r/{$subreddit}/{$type}.json?limit=100".($type == Thread::TOP ? "&t=week" : ""));
+        $curl->get("http://www.reddit.com/r/{$subreddit}/search.json?limit=100&q=site%3Asoundcloud.com&restrict_sr=on&sort={$type}".($type == Thread::TOP ? "&t=week" : "&t=day"));
         $data = json_decode($curl->response);
 
         if(!isset($data->data->children)) {
@@ -41,7 +41,7 @@ class Thread extends \Eloquent {
             return;
         }
 
-        Thread::where("subreddit", "=", $subreddit)->delete();
+        Thread::where("subreddit", "=", $subreddit)->where("type", "=", $type)->delete();
         foreach($data->data->children as $thread) {
             $thread = $thread->data;
             switch($thread->domain) {
@@ -81,6 +81,7 @@ class Thread extends \Eloquent {
                     }
                     $th->subreddit = $subreddit;
                     $th->votes = $thread->score;
+                    $th->type = $type;
                     $th->save();
                     break;
                 default;

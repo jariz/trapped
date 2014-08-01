@@ -34,7 +34,9 @@
             </div>
         </div>
         @endforeach
-        {{$threads->links()}}
+        <div id="homePaginator">
+            {{$threads->links()}}
+        </div>
     </div>
 </div>
 

@@ -11496,3 +11496,8 @@ body {
     transform: translate3d(0, 0, 0);
   }
 }
+
+/* line 275, ../sass/screen.scss */
+#homePaginator, #subredditPaginator {
+  display: none;
+}

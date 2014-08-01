@@ -13,8 +13,8 @@ var main = function () {
 
 
             $('.grid.row').infinitescroll({
-                navSelector: ".pagination",
-                nextSelector: ".pagination a:last",
+                navSelector: "#homePaginator .pagination",
+                nextSelector: "#homePaginator .pagination a:last",
                 itemSelector: ".grid.row .item"
             }, function() {
                 Player.init();
@@ -26,6 +26,18 @@ var main = function () {
                 text: {onAirToday: "Today's program"},
                 updatePeriod: 99999 //epic hax
             });
+
+            break;
+    }
+
+    switch(window.location.pathname.substr(0, 4)) {
+        case "/hot":
+        case "/top":
+            $("#content .container").infinitescroll({
+                navSelector: "#subredditPaginator .pagination",
+                nextSelector: "#subredditPaginator .pagination a:last",
+                itemSelector: "#content .container .media"
+            })
 
             break;
     }

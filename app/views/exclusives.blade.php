@@ -7,6 +7,10 @@
         <h1>Exclusives<small></small></h1>
     </div>
 
+    <div class="alert alert-info">
+        <strong><i class="fa fa-info-circle"></i> Want your work featured here?</strong> <a href="http://www.reddit.com/message/compose?to=%2Fr%2Ftrap" title=".... with a private soundcloud link">Message us on reddit!</a> (anyone can apply!)
+    </div>
+
     @foreach($exclusives as $exclusive)
     <div class="media">
         <img class="media-object pull-left" src="{{str_replace('large', 't500x500', $exclusive->art)}}" width="200" height="200">

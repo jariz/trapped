@@ -10,8 +10,8 @@ class Site extends \Base {
     public function home() {
         $subreddit = "trap";
         Thread::download($subreddit, Thread::HOT);
-        $all_threads = Thread::where("subreddit", "=", $subreddit)->orderBy('votes', 'desc')->where("embed_thumbnail", "NOT LIKE", "%fb_placeholder.png%")->get(array("id","url"));
-        $threads = Thread::where("subreddit", "=", $subreddit)->orderBy('votes', 'desc')->where("embed_thumbnail", "NOT LIKE", "%fb_placeholder.png%")->paginate(12);;
+        $all_threads = Thread::where("subreddit", "=", $subreddit)->orderBy('votes', 'desc')->where("type", "=", Thread::HOT)->where("embed_thumbnail", "NOT LIKE", "%fb_placeholder.png%")->get(array("id","url"));
+        $threads = Thread::where("subreddit", "=", $subreddit)->orderBy('votes', 'desc')->where("type", "=", Thread::HOT)->where("embed_thumbnail", "NOT LIKE", "%fb_placeholder.png%")->paginate(12);;
         return View::make("home")
             ->with("title", "Home")
             ->with("threads", $threads)
@@ -20,7 +20,7 @@ class Site extends \Base {
 
     public function hot($subreddit="trap") {
         Thread::download($subreddit, Thread::HOT);
-        $threads = Thread::where("subreddit", "=", $subreddit);
+        $threads = Thread::where("subreddit", "=", $subreddit)->where("type", "=", Thread::HOT);
         return View::make("hot")
             ->with("title", "Hot")
             ->with("threads", $threads->paginate(15))
@@ -32,7 +32,7 @@ class Site extends \Base {
 
     public function top($subreddit="trap") {
         Thread::download($subreddit, Thread::TOP);
-        $threads = Thread::where("subreddit", "=", $subreddit);
+        $threads = Thread::where("subreddit", "=", $subreddit)->where("type", "=", Thread::TOP);
         return View::make("hot")
             ->with("title", "Top")
             ->with("threads", $threads->paginate(15))

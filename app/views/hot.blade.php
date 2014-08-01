@@ -31,7 +31,9 @@
     </div>
     <hr>
     @endforeach
-    {{$threads->links()}}
+    <div id="subredditPaginator">
+        {{$threads->links()}}
+    </div>
 </div>
 @stop
 
