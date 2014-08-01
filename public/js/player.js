@@ -32,8 +32,8 @@ var Player = {
             soundManager.setup({
                 url: '/swf/',
                 flashVersion: 9,
-                preferFlash: false, // prefer 100% HTML5 mode, where both supported
-                debugMode: false
+                preferFlash: true, // prefer 100% HTML5 mode, where both supported
+                debugMode: true
             });
             setInterval(Player.refreshRadioInfo, 10000);
 
@@ -100,13 +100,19 @@ var Player = {
                 $.each(Player.sounds, function(i, sound) {
                     if(typeof sound != "undefined") sound.play({
                         onfinish: Player.next,
-                        onload: function() {
+                        onplay: function() {
                             if(this.readyState == 2) {
                                 Player.playbackError();
                                 return;
                             }
                             Player.unlock();
                             Player.canNavigate();
+                        },
+                        onload: function() {
+                            if(this.readyState == 2) {
+                                Player.playbackError();
+                                return;
+                            }
                         }
                     });
                 });
@@ -218,12 +224,22 @@ var Player = {
         player.find(".title").find(".name").text("");
         player.find(".artwork").hide();
         player.find(".listenon").hide();
+        var firstPlay = true;
         var sound = soundManager.createSound({
             id: "trappedRadio",
             url: 'http://radio.trapped.io:8000/TRAPPED',
-            autoPlay: false,
+            autoPlay: true,
             autoLoad: true,
+
             onload: function() {
+                if(this.readyState == 2) {
+                    Player.playbackError();
+                    return;
+                }
+            },
+            onplay: function() {
+                if(!firstPlay) return;
+                else firstPlay = false;
                 if(this.readyState == 2) {
                     Player.playbackError();
                     return;
