@@ -6,7 +6,7 @@
         <h1>TRAPPED</h1>
         <h4>Beta</h4>
         <p>
-            Easily browse your favorite trap music, listen to exclusives premiered only here, tune into our 24/7 radio and read our blog. <span>Welcome to the new trap experience.</span>
+            Easily browse your favorite trap music, listen to tracks exclusive to TRAPPED, tune into our 24/7 radio and read our blog. <span>Welcome to the new trap experience.</span>
         </p>
         <p>
             <a href="#" onclick="Player.startPlaylist(); return false;" class="btn btn-primary"><i class="fa fa-play"></i> Start</a>
