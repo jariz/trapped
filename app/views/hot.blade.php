@@ -31,6 +31,9 @@
     </div>
     <hr>
     @endforeach
+    @if(count($threads) == 0)
+    <p style="margin-top:40px;" class="text-muted text-center">No results found :(</p>
+    @endif
     <div id="subredditPaginator">
         {{$threads->links()}}
     </div>
