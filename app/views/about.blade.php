@@ -15,8 +15,8 @@
     </p>
     <ul>
         <li>Make /r/trap better browsable, with a user-friendly UI.</li>
-        <li>Have a community ran radio that's available 24/7.</li>
-        <li>Provide artists a platform to promote their music on.</li>
+        <li>Have a community run radio that's available 24/7.</li>
+        <li>Provide up-and-coming artists a platform to promote their music on.</li>
         <li>Make /r/trap easy to listen to with a player that allows you to easily shift trough the music on /r/trap.</li>
         <li>Reach out better to our community trough our blog.</li>
     </ul>
@@ -28,10 +28,10 @@
     <p>Think of trapped as an extension of /r/trap, not a competitor. Without /r/trap, there would be no trapped.</p>
 
     <h4>Why is only soundcloud content supported?</h4>
-    <p>In the beta, we will mostly focus on soundcloud, later on, we will try to integrate other services such as youtube.</p>
+    <p>In the beta, we will only be supporting Soundcloud and our 24/7 radio stream, in the future we may integrate other services such as youtube.</p>
 
     <h4>Do you make any money with this site?</h4>
-    <p>No. In fact, this is only costing us money.<br>TRAPPED is build entirely out of passion for reddit and trap.</p>
+    <p>No. In fact, this is only costing us money.<br>TRAPPED is built entirely out of passion for reddit and trap.</p>
     <p>No ads will ever be shown on TRAPPED.</p>
 
     <p class="text-muted pull-right" style="margin-top:20px;"><small>Built by: <a href="http://jari.io"><img style="margin-left:10px;" src="{{url('img/jari.png')}}"></a></small></p>
