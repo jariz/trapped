@@ -33,7 +33,10 @@ var Player = {
                 url: '/swf/',
                 flashVersion: 9,
                 preferFlash: true, // prefer 100% HTML5 mode, where both supported
-                debugMode: true
+                debugMode: true,
+                onready: function() {
+                    Player.ready = true;
+                }
             });
             setInterval(Player.refreshRadioInfo, 10000);
 
@@ -42,6 +45,7 @@ var Player = {
         Player.navChange();
         Player.initialized = true;
     },
+    ready: false,
     initialized: false,
     navChange: function() {
         if(window.location.toString().substr(-9, 9) == "?autoplay" && Player.playlist.length > 0) {
@@ -145,7 +149,17 @@ var Player = {
         $(".player .controls li a").removeClass("disable");
     },
     playlistId: null,
+    callOnceReady: function(radio, args) {
+        soundManager.onready(function() {
+            if(radio) Player.streamRadio();
+            else Player.stream.apply(Player, args);
+        })
+    },
     stream:function(url, id) {
+        if(!Player.ready) {
+            Player.callOnceReady(false, arguments);
+            return;
+        }
         if(Player.loading) return;
         Player.playlistId = id;
         $(".player").addClass("visible");
@@ -213,6 +227,10 @@ var Player = {
 
     radioPlaying: false,
     streamRadio: function() {
+        if(!Player.ready) {
+            Player.callOnceReady(true);
+            return;
+        }
         if(Player.loading) return;
         if(typeof $(".player .title").attr("data-original-title") != "undefined") $(".player .title").popover("destroy")
         $(".player").addClass("visible");
@@ -252,7 +270,6 @@ var Player = {
                     return;
                 }
                 Player.loading = false;
-                console.info("radio: we out there");
                 Player.unlock();
                 Player.setPlaying(true);
                 Player.canNavigate();
