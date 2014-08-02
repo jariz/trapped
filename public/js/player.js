@@ -5,6 +5,11 @@ var Player = {
             e.preventDefault();
             Player.stream($(this).data("url"), $(this).data("id"));
         });
+        $("a[href^='https://soundcloud.com/'],a[href^='http://soundcloud.com/']").click(function(e) {
+            e.preventDefault();
+            Player.stream($(this).attr("href"));
+        });
+
         if(!Player.initialized) {
             $(".player .next").click(function(e) {
                 e.preventDefault();

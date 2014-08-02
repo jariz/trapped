@@ -12,6 +12,8 @@ var ASyncNav = {
             var gud = $._data(this, 'events');
             if (typeof gud == "undefined" || (typeof gud != "undefined" && gud.click && gud.click.length == 0)) {
                 $(this).click(function (e) {
+                    var href = $(this).attr("href");
+
                     //does this link reference to a page on this site?
                     if ($(this).attr("target") == undefined && $(this).attr("href").substr(0, domain.length) == domain) {
 
@@ -36,9 +38,11 @@ var ASyncNav = {
                         }
 
                         //hijack
-                        var href = $(this).attr("href");
                         e.preventDefault();
                         ASyncNav.nav(href);
+                    } else {
+                        e.preventDefault();
+                        window.open(href);
                     }
                 })
             }
