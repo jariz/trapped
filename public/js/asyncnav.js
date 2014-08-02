@@ -53,8 +53,10 @@ var ASyncNav = {
             },
             function (dataz) {
                 $("#content").html(dataz);
-                if ("TrappedExports" in window && "title" in TrappedExports)
-                    window.title = TrappedExports.title;
+                if ("TrappedExports" in window && "title" in TrappedExports) {
+                    document.title = TrappedExports.title;
+                    Player.appendTitle();
+                }
                 //reinit errything
                 $(document).trigger("trapped:nav");
             }

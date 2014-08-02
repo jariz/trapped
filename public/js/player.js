@@ -72,7 +72,14 @@ var Player = {
             player.find(".prev").addClass("disable");
         else player.find(".prev").removeClass("disable");
     },
+    appendTitle: function(){
+        if(Player.playing && document.title.substr(0,2) != "► ") document.title = "► "+document.title;
+        else if(!Player.playing && document.title.substr(0,2) == "► ") document.title = document.title.substr(2, document.title.length);
+    },
+    playing: false,
     setPlaying: function(playing) {
+        Player.playing = playing;
+        Player.appendTitle();
         if(playing)
             $(".player .play").parent().addClass("active");
         else $(".player .play").parent().removeClass("active");
