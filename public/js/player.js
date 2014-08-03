@@ -37,7 +37,7 @@ var Player = {
             soundManager.setup({
                 url: '/swf/',
                 flashVersion: 9,
-                preferFlash: true, // prefer 100% HTML5 mode, where both supported
+                preferFlash: true,
                 debugMode: true,
                 onready: function() {
                     Player.ready = true;
