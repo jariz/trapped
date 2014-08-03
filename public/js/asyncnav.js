@@ -40,7 +40,7 @@ var ASyncNav = {
                         //hijack
                         e.preventDefault();
                         ASyncNav.nav(href);
-                    } else {
+                    } else if(href.substr(0, "http://radio.trapped.io".length) != "http://radio.trapped.io"){
                         e.preventDefault();
                         window.open(href);
                     }
