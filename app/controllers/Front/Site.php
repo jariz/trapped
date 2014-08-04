@@ -9,9 +9,20 @@ class Site extends \Base {
 
     public function home() {
         $subreddit = "trap";
-        Thread::download($subreddit, Thread::HOT);
-        $all_threads = Thread::where("subreddit", "=", $subreddit)->orderBy('votes', 'desc')->where("type", "=", Thread::HOT)->where("embed_thumbnail", "NOT LIKE", "%fb_placeholder.png%")->get(array("id","url"));
-        $threads = Thread::where("subreddit", "=", $subreddit)->orderBy('votes', 'desc')->where("type", "=", Thread::HOT)->where("embed_thumbnail", "NOT LIKE", "%fb_placeholder.png%")->paginate(12);;
+        Thread::download($subreddit, Thread::TOP);
+
+        $all_threads = Thread::where("subreddit", "=", $subreddit)
+            ->orderBy('votes', 'desc')
+            ->where("type", "=", Thread::TOP)
+            ->where("embed_thumbnail", "NOT LIKE", "%fb_placeholder.png%")
+            ->where("embed_thumbnail", "!=", "")
+            ->get(array("id","url"));
+        $threads = Thread::where("subreddit", "=", $subreddit)
+            ->orderBy('votes', 'desc')
+            ->where("type", "=", Thread::TOP)
+            ->where("embed_thumbnail", "NOT LIKE", "%fb_placeholder.png%")
+            ->where("embed_thumbnail", "!=", "")
+            ->paginate(12);;
         return View::make("home")
             ->with("title", "Home")
             ->with("threads", $threads)

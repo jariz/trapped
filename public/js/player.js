@@ -5,7 +5,7 @@ var Player = {
             e.preventDefault();
             Player.stream($(this).data("url"), $(this).data("id"));
         });
-        $("a[href^='https://soundcloud.com/'],a[href^='http://soundcloud.com/']").click(function(e) {
+        $("#content a[href^='https://soundcloud.com/'],#content a[href^='http://soundcloud.com/']").click(function(e) {
             e.preventDefault();
             Player.stream($(this).attr("href"));
         });
@@ -37,7 +37,7 @@ var Player = {
             soundManager.setup({
                 url: '/swf/',
                 flashVersion: 9,
-                preferFlash: true, // prefer 100% HTML5 mode, where both supported
+                preferFlash: true,
                 debugMode: true,
                 onready: function() {
                     Player.ready = true;

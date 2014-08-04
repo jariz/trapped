@@ -40,10 +40,11 @@ var ASyncNav = {
                         //hijack
                         e.preventDefault();
                         ASyncNav.nav(href);
-                    } else {
-                        e.preventDefault();
-                        window.open(href);
                     }
+//                    else if(href.substr(0, "http://radio.trapped.io".length) != "http://radio.trapped.io"){
+//                        e.preventDefault();
+//                        window.open(href);
+//                    }
                 })
             }
         });
