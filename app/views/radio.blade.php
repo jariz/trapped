@@ -12,8 +12,8 @@
     </div>
 
     <p>
-        TRAPPED Radio is here to bring you the very best in Trap music, 24 hours a day.<br>
-        Featuring exclusive live mixes, guest DJ's, and some of the best trap that the internet has to offer, TRAPPED
+        Trapped Radio is here to bring you the very best Trap music, 24 hours a day.<br>
+        Featuring exclusive tracks, live mixes, guest DJ's, and some of the best trap music that the internet has to offer, Trapped
         Radio will not disappoint!<br>
         Kick back, Keep it Trill, and Enjoy!
     </p>
