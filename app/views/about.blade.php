@@ -34,6 +34,9 @@
     <p>No. In fact, this is only costing us money.<br>TRAPPED is built entirely out of passion for reddit and trap.</p>
     <p>No ads will ever be shown on TRAPPED.</p>
 
+    <h4>I found a bug!</h4>
+    <p>Report them to our <a target="_blank" href="https://github.com/jariz/trapped/issues">bugtracker</a>.</p>
+
     <p class="text-muted pull-right" style="margin-top:20px;"><small>Built by: <a href="http://jari.io"><img style="margin-left:10px;" src="{{url('img/jari.png')}}"></a></small></p>
 </div>
 @stop
