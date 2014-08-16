@@ -7,11 +7,11 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{url('stylesheets/screen.css')}}">
-    //iOS WebApp Capability (Save to home screen)
-    <link rel="apple-touch-icon" href="img/touch-icon-iphone.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/touch-icon-ipad.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/touch-icon-iphone-retina.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/touch-icon-ipad-retina.png">
+    <!-- iOS WebApp Capability (Save to home screen)-->
+    <link rel="apple-touch-icon" href="{{url('img/touch-icon-iphone.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{url('img/touch-icon-ipad.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{url('img/touch-icon-iphone-retina.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{url('img/touch-icon-ipad-retina.png')}}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script>
