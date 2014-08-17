@@ -14,12 +14,6 @@
     <link rel="apple-touch-icon" sizes="152x152" href="{{url('img/touch-icon-ipad-retina.png')}}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- addToHomescreen Banner -->
-    <link rel="stylesheet" type="text/css" href="{{url('stylesheets/addtohomescreen.css')}}">
-    <script src="{{url('js/addtohomescreen.js')}}"></script>
-    <script>
-        addToHomescreen();
-    </script>
     <script>
         var domain = "{{url()}}";
     </script>

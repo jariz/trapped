@@ -1,4 +1,10 @@
 var main = function () {
+    var ath = false;
+    if(!ath) {
+        ath = true;
+        addToHomescreen();
+    }
+
     switch (window.location.pathname) {
         case "/":
             var target = $(".hero");
