@@ -62,7 +62,7 @@ class Site extends \Base {
     public function blog() {
         return View::make("blog")
             ->with("title", "Blog")
-            ->with("posts", Blog::orderBy('desc')->paginate(5));
+            ->with("posts", Blog::orderBy('created_at', 'desc')->paginate(5));
     }
 
     public function exclusives() {;
