@@ -4,7 +4,6 @@
 <div class="hero">
     <div class="container">
         <h1>TRAPPED</h1>
-        <h4>Beta</h4>
         <p>
             Easily browse your favorite trap music, listen to tracks exclusive to TRAPPED, tune into our 24/7 radio and read our blog. <span>Welcome to the new trap experience.</span>
         </p>
